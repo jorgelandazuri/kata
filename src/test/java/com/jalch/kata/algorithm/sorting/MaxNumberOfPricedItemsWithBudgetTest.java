@@ -84,13 +84,12 @@ public class MaxNumberOfPricedItemsWithBudgetTest {
     }
 
     @Test
-    public void huge_number_of_toy_prices_with_random_budget_best_algorithm() {
+    public void big_number_of_toy_prices_with_random_budget_best_algorithm() {
         assertThat(underTest.lastMethodExecutionTime, is(0L));
         assertSortingOptionsTimeEfficiencyWithNumberOfPrices(49);
         assertSortingOptionsTimeEfficiencyWithNumberOfPrices(99);
         assertSortingOptionsTimeEfficiencyWithNumberOfPrices(999);
         assertSortingOptionsTimeEfficiencyWithNumberOfPrices(1999);
-        assertSortingOptionsTimeEfficiencyWithNumberOfPrices(19999);
     }
 
     private void assertSortingOptionsTimeEfficiencyWithNumberOfPrices(int numberOfPrices) {
