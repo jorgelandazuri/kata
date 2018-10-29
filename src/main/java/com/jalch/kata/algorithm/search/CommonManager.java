@@ -53,7 +53,7 @@ public class CommonManager {
     private static String managerInCommonFor(String employeeA, String employeeB, Map<String, String> employeeToDirectManager) {
 
         if (employeeA.equals(employeeB)) {
-            return employeeA;
+            return employeeToDirectManager.get(employeeA);
         } else if (employeeToDirectManager.getOrDefault(employeeA, "").equals(employeeB)) {
             return employeeB;
         } else if (employeeToDirectManager.getOrDefault(employeeB, "").equals(employeeA)) {
@@ -65,7 +65,15 @@ public class CommonManager {
 
         employeeAToUpperManagerPath.retainAll(employeeBToUpperManagerPath);
 
-        return employeeAToUpperManagerPath.peek();
+
+        if (employeeAToUpperManagerPath.contains(employeeB)) {
+            return employeeB;
+        } else if (employeeBToUpperManagerPath.contains(employeeA)) {
+            return employeeA;
+        } else {
+            employeeAToUpperManagerPath.retainAll(employeeBToUpperManagerPath);
+            return employeeAToUpperManagerPath.peek();
+        }
     }
 
     private static LinkedList<String> getManagerPathFor(String employee, LinkedList<String> path, Map<String, String> employeeToDirectManager) {

@@ -5,8 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 
-import static org.junit.Assert.*;
-
 public class CommonManagerTest {
 
     @Test
@@ -43,7 +41,15 @@ public class CommonManagerTest {
                 "June Alex\n" +
                 "June Qing\n" +
                 "Qing Paul\n" +
-                "Qing Gareth"), is("Alex"));
+                "Qing Gareth"), is("June"));
+
+        assertThat(CommonManager.find("5\n" +
+                "June\n" +
+                "June\n" +
+                "June Alex\n" +
+                "June Qing\n" +
+                "Qing Paul\n" +
+                "Qing Gareth"), is("June"));
     }
 
     @Test
@@ -80,5 +86,18 @@ public class CommonManagerTest {
                 "June Qing\n" +
                 "Qing Paul\n" +
                 "Qing Gareth"), is("June"));
+    }
+
+    @Test
+    public void not_direct_manager_in_same_line() {
+
+        assertThat(CommonManager.find("5\n" +
+                "Sarah\n" +
+                "Claudiu\n" +
+                "June Sarah\n" +
+                "Sarah Tom\n" +
+                "Tom Simon\n" +
+                "Tom Claudiu"), is("Sarah"));
+
     }
 }
