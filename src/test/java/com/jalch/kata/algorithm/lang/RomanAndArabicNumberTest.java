@@ -27,7 +27,7 @@ public class RomanAndArabicNumberTest {
 
     @Test
     public void invalid_roman() {
-//        assertThat(RomanAndArabicNumber.convert("a"), is(""));
+        assertThat(RomanAndArabicNumber.convert("a"), is(""));
         assertThat(RomanAndArabicNumber.convert("_I"), is(""));
         assertThat(RomanAndArabicNumber.convert("*"), is(""));
         assertThat(RomanAndArabicNumber.convert("IIIV"), is(""));
