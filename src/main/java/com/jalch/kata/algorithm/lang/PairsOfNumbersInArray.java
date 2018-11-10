@@ -8,7 +8,7 @@ public class PairsOfNumbersInArray {
 
     //n-> number of elements.
     //d-> distinct numbers (d <= n)
-    //O(n) + O(distinct numbers) = O()
+    //O(n) + O(distinct numbers) = O(n)
     public static int get(int[] numbers) {
         Map<Integer, Integer> numberRepetitions = new HashMap<>();
         for(Integer i: numbers){
