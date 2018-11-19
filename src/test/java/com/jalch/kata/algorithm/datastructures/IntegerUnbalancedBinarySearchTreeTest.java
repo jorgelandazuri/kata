@@ -9,7 +9,7 @@ import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-public class UnbalancedBinarySearchTreeTest {
+public class IntegerUnbalancedBinarySearchTreeTest {
 
     private IntegerUnbalancedBinarySearchTree underTest;
 
