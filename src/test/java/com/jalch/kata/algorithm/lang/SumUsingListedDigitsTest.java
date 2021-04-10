@@ -44,7 +44,8 @@ public class SumUsingListedDigitsTest {
 
     @Test
     public void sum_of_one_zero() {
-        assertThat(underTest.sumOf(aListOf(0), ANY_LIST), is(ANY_LIST));
+        assertThat(underTest.sumOf(aListOf(0), aListOf(1,2,3)), is(aListOf(1,2,3)));
+        assertThat(underTest.sumOf(aListOf(1,2,3), aListOf(0)), is(aListOf(1,2,3)));
     }
 
     @Test
